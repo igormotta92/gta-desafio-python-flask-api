@@ -1,0 +1,28 @@
+# version
+python --version
+
+# ini venv caso já exista
+.\_env\Scripts\Activate.ps1
+
+# Criar ambiente virtual de puton
+python -m venv [nome]
+
+pip install Flask
+pip install Flask-Restful
+
+pip freeze > requirements.txt
+- python -m pip freeze > requirements.txt
+
+pip install -r requirements.txt
+
+pip uninstall nome da_lib
+
+Thunder Cliente(vscode) ou Postman
+
+# filtro listas
+book = [book [ book for book in books book['title'] title ]
+
+
+# https://www.youtube.com/watch?v=b6wzCMH6-tY
+# https://www.youtube.com/watch?v=P4yljJ9YBpg
+

@@ -1,0 +1,133 @@
+@baseUrl = http://localhost:5000
+
+
+# __columns__ movie= ("title", "resume", "genre", "rating", "year_release")
+# __columns__ series = ("title", "resume", "genre", "rating", "season")
+# __columns__ episodes = ("id_serie", "title", "resume", "season")
+
+######################################################################
+######################################################################
+
+##################
+### MoviesList ###
+##################
+
+# __columns__ movie= ("title", "resume", "genre", "rating", "year_release")
+
+GET {{baseUrl}}/movies HTTP/1.1
+###
+POST {{baseUrl}}/movies HTTP/1.1
+Content-Type: application/json
+
+{
+    "title": "B18",
+    "resume": "Lorem Ipsulom",
+    "genre": "Action",
+    "rating": 2,
+    "year_release": 2010
+}
+
+##############
+### Movies ###
+##############
+
+GET {{baseUrl}}/movies/10 HTTP/1.1
+###
+PUT {{baseUrl}}/movies/12 HTTP/1.1
+Content-Type: application/json
+
+{
+    "title": "B20",
+    "resume": "Lorem Ipsulom",
+    "genre": "Action 2",
+    "rating": 5,
+    "year_release": 2010
+}
+
+###
+DELETE {{baseUrl}}/movies/12 HTTP/1.1
+
+######################################################################
+######################################################################
+
+##################
+### SeriesList ###
+##################
+
+GET {{baseUrl}}/series HTTP/1.1
+###
+POST {{baseUrl}}/series HTTP/1.1
+Content-Type: application/json
+
+{
+    "title": "B15 Serie",
+    "resume": "Lorem Ipsulom",
+    "genre": "Action",
+    "rating": 4,
+    "season": 3
+}
+
+##############
+### Series ###
+##############
+
+GET {{baseUrl}}/series/1 HTTP/1.1
+###
+PUT {{baseUrl}}/series/1 HTTP/1.1
+Content-Type: application/json
+
+{
+    "title": "B14 Serie 2",
+    "resume": "Lorem Ipsulom - Edited",
+    "genre": "Comedi",
+    "rating": 4,
+    "season": 4
+}
+
+###
+DELETE {{baseUrl}}/series/1 HTTP/1.1
+
+######################################################################
+######################################################################
+
+##################
+## EpisodesList ##
+##################
+
+GET {{baseUrl}}/episodes HTTP/1.1
+###
+POST {{baseUrl}}/episodes HTTP/1.1
+Content-Type: application/json
+
+{
+    "id_serie": 2,
+    "title": "A volta dos que não foram 3",
+    "resume": "Resume",
+    "season": 1,
+    "episode_number": 3
+}
+
+##############
+## Episodes ##
+##############
+
+GET {{baseUrl}}/episodes/1 HTTP/1.1
+###
+PUT {{baseUrl}}/episodes/1 HTTP/1.1
+Content-Type: application/json
+
+{
+    "id_serie": 2,
+    "title": "A volta dos que ficaram 2",
+    "resume": "Resume 2",
+    "season": 1,
+    "episode_number": 5
+}
+
+###
+DELETE {{baseUrl}}/episodes/1 HTTP/1.1
+
+###############################################################
+###############################################################
+
+GET {{baseUrl}}/filters?title=b1 HTTP/1.1
